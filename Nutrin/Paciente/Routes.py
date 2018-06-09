@@ -1,6 +1,6 @@
 from flask import jsonify, request
 from Nutrin import app
-from Nutrin.Paciente.Model.Response import response
+from Nutrin.Model.Response import response
 
 @app.route('/paciente/cadastrar', methods=["POST"])
 def CadastrarPacienteRoute():
