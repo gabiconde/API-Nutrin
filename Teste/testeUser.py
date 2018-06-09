@@ -42,8 +42,12 @@ def testeListarUser():
     Dados = Req.api.get(url).json()
     return Dados
 
+def testeBuscarUser(username):
+    url = url_padrao + "/usuario/" + username
+    Dados = Req.api.get(url).json()
+    return Dados
+
 def main():
-    print(testeAlterarUser())
-    print(testeListarUser())
+    print(testeBuscarUser('Mokey'))
 
 main()

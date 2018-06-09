@@ -30,7 +30,20 @@ def CadastarUserRoute():
     response["Dados"] = ""
     response["Mensagem"] = mensagem
     return jsonify(response)
-    
+
+@app.route("/usuario/<username>", methods=["GET"])
+def BuscarUserRoute(username):
+    from Nutrin.User.Services.buscarUser import buscarUser
+    user = buscarUser(username)
+    if user:
+        response["Status"] = "Sucesso"
+        response["Dados"] = user
+        response["Mensagem"] = "Usuario encontrado com sucesso"
+        return jsonify(response)
+    response["Status"] = "Erro"
+    response["Dados"] = user
+    response["Mensagem"] = "Usuario não encontrado"
+    return jsonify(response)
 
 @app.route("/usuario/alterar-senha", methods=["PUT"])
 def AlterarSenhaRoute():
