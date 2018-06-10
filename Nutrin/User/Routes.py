@@ -49,10 +49,18 @@ def BuscarUserRoute(username):
 def AlterarSenhaRoute():
     from Nutrin.User.Services.alterarSenha import alterarSenha
     dados = request.get_json()
-    alterarSenha(dados)
-    response["Status"] = "Sucesso"
+    username = dados["username"]
+    senha_atual = dados["password_atual"]
+    senha_nova = dados['password_nova']
+    status, mensagem = alterarSenha(username,senha_atual,senha_nova)
+    if status:
+        response["Status"] = "Sucesso"
+        response["Dados"] = ""
+        response["Mensagem"] = mensagem
+        return jsonify(response)
+    response["Status"] = "Erro"
     response["Dados"] = ""
-    response["Mensagem"] = "Senha alterada com sucesso"
+    response["Mensagem"] = mensagem
     return jsonify(response)
 
 @app.route("/usuario/alterar-user", methods=['PUT'])
@@ -74,4 +82,17 @@ def AlterarUserRoute():
     response["Status"] = "Erro"
     response["Dados"] = ""
     response["Mensagem"] = mensagem
+    return jsonify(response)
+
+@app.route("/usuario/excluir/<username>", methods=["GET"])
+def DeletarUserRoute(username):
+    from Nutrin.User.Services.excluirUser import excluirUser
+    if excluirUser(username):
+        response["Status"] = "Sucesso"
+        response["Dados"] = ""
+        response["Mensagem"] = "Usuário excluido"
+        return jsonify(response)
+    response["Status"] = "Erro"
+    response["Dados"] = ""
+    response["Mensagem"] = "Usuário não existe"
     return jsonify(response)
