@@ -1,6 +1,5 @@
 from flask import jsonify, request
-from Nutrin import app
-from Nutrin.Model.Response import response
+from Nutrin import app, response
 
 @app.route("/usuarios", methods=["GET"])
 def ListarUserRoute():

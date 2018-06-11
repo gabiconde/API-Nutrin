@@ -14,11 +14,8 @@ class Paciente(db.Model):
 
     user = db.relationship('User', foreign_keys=user_id)
 
-    def __init__(self, username, password, nome, email, celular, dataNascimento, sexo, cidade, profissao, objetivo):
-        u = User(username, password, nome, email, celular, "P")
-        db.session.add(u)
-        db.session.commit()
-        self.user_id = u.id
+    def __init__(self, id_user, dataNascimento, sexo, cidade, profissao, objetivo):
+        self.user_id = id_user
         self.dataNascimento = dataNascimento
         self.sexo = sexo
         self.cidade = cidade

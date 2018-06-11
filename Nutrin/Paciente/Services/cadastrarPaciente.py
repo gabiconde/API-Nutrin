@@ -1,13 +1,15 @@
 from Nutrin.Paciente.Model.Paciente import Paciente
+from Nutrin.User.Services.cadastrarUser import cadastrarUser
+from Nutrin.User.Services.buscarUser import buscarUser
 from Nutrin import db
 
 def cadastrarPaciente(username, password, nome, email, celular, dataNascimento, sexo, cidade, profissao, objetivo):
-    from Nutrin.User.Services.validar import validar_email, validar_username
-    if not validar_email(email):
-        return False, "Email já cadastrado"
-    elif not validar_username(username):
-        return False, 'Username já cadastrado'
-    p = Paciente(username,password, nome, email, celular, dataNascimento, sexo, cidade, profissao, objetivo)
-    db.session.add(p)
-    db.session.commit()
-    return True, 'Paciente cadastrado com sucesso'
+    status, mensagem = cadastrarUser(username, password, nome, email, celular, "P")
+    if status:
+        user = buscarUser(username, True)
+        id_user = user.id
+        p = Paciente(id_user, dataNascimento, sexo, cidade, profissao, objetivo)
+        db.session.add(p)
+        db.session.commit()
+        return True, 'Paciente cadastrado com sucesso'
+    return status, mensagem

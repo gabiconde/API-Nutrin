@@ -1,6 +1,6 @@
 from flask import jsonify, request
 from Nutrin import app
-from Nutrin.Model.Response import response
+from Nutrin import response
 
 @app.route('/paciente/cadastrar', methods=["POST"])
 def CadastrarPacienteRoute():
@@ -30,9 +30,9 @@ def CadastrarPacienteRoute():
 @app.route('/pacientes', methods=["GET"])
 def ListarPacientesRoute():
     from Nutrin.Paciente.Services.listarPacientes import listarPacientes
-    response["Status"] = "Sucesso"
-    response["Dados"] = listarPacientes()
-    response["Mensagem"] = "Pacientes listados com sucessos"
+    response['Status'] = "Sucesso"
+    response['Dados'] = listarPacientes()
+    response['Mensagem'] = "Pacientes listado com sucesso"
     return jsonify(response)
 
 
