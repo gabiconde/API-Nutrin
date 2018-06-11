@@ -35,7 +35,8 @@ def ListarPacientesRoute():
     response['Mensagem'] = "Pacientes listado com sucesso"
     return jsonify(response)
 
-
 @app.route('/paciente/consultar/<username>', methods=["GET"])
-def ConsultarPacienteRoute(username):
-    pass
+def PesquisarPacienteRoute(username):
+    from Nutrin.Paciente.Services.pesquisarPaciente import pesquisarPaciente
+    pesquisarPaciente(username)
+    return jsonify("teste")

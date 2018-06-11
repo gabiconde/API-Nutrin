@@ -24,9 +24,14 @@ def testeCadastrarPaciente():
     dados = Req.api.post(url, json=paciente).json()
     return dados
 
+def testePesquisarPaciente(username):
+    url = url_basica + '/paciente/consultar/' + username
+    dados = Req.api.get(url).json()
+    return dados
 
 def main():
     print(testeListarPaciente())
     print(testeCadastrarPaciente())
+    print(testePesquisarPaciente('emersoncarbono'))
 
 main()
