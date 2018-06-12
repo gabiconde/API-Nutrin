@@ -29,9 +29,14 @@ def testePesquisarPaciente(username):
     dados = Req.api.get(url).json()
     return dados
 
+def testeExcluirPaciente(username):
+    url = url_basica + '/paciente/excluir/' + username
+    dados = Req.api.get(url).json()
+    return dados
 def main():
-    print(testeListarPaciente())
-    print(testeCadastrarPaciente())
-    print(testePesquisarPaciente('emersoncarbono'))
+    #print(testeListarPaciente())
+    #print(testeCadastrarPaciente())
+    #print(testePesquisarPaciente('amanada'))
+    print(testeExcluirPaciente("emersoncarbono"))
 
 main()

@@ -38,5 +38,26 @@ def ListarPacientesRoute():
 @app.route('/paciente/consultar/<username>', methods=["GET"])
 def PesquisarPacienteRoute(username):
     from Nutrin.Paciente.Services.pesquisarPaciente import pesquisarPaciente
-    pesquisarPaciente(username)
-    return jsonify("teste")
+    status, retorno = pesquisarPaciente(username)
+    if status:
+        response["Status"] = "Sucesso"
+        response['Dados'] = retorno
+        response['Mensagem'] = "Paciente encontrado"
+        return jsonify(response)
+    response["Status"] = "Erro"
+    response['Dados'] = ""
+    response['Mensagem'] = retorno
+    return jsonify(response)
+
+@app.route('/paciente/excluir/<username>', methods=["GET"])
+def ExcluirPacienteRoute(username):
+    from Nutrin.Paciente.Services.excluirPaciente import excluirPaciente
+    if excluirPaciente(username):
+        response["Status"] = "Sucesso"
+        response['Dados'] = ''
+        response['Mensagem'] = "Paciente foi excluido"
+        return jsonify(response)
+    response["Status"] = "Erro"
+    response['Dados'] = ''
+    response['Mensagem'] = "Falaha ao exlcuir o paciente"
+    return jsonify(response)

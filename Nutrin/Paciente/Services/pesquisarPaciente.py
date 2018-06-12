@@ -1,5 +1,6 @@
 def pesquisarPaciente(username, f=False):
     from Nutrin.User.Model.User import User
+    from Nutrin import db
     user = db.session.query(User).filter_by(username = username).first()
     if user:
         user_id = user.id
