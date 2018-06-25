@@ -1,6 +1,25 @@
 from flask import jsonify, request
 from Nutrin import app, response
 
+@app.route("/login", methods=["POST"])
+def LoginRoute():
+    from Nutrin.User.Services.login import login
+    dados = request.get_json()
+    username = dados["username"]
+    password = dados["password"]
+    l = login(username, password)
+    if l:
+        response["Status"] = "Sucesso"
+        response["Dados"] = l
+        response["Mensagem"] = "Login feito com sucesso"
+        return jsonify(response)
+    response["Status"] = "Erro"
+    response["Dados"] = l
+    response["Mensagem"] = "O usuario ou a senha estão errados"
+    return jsonify(response)
+    
+
+
 @app.route("/usuarios", methods=["GET"])
 def ListarUserRoute():
     from Nutrin.User.Services.listarUser import listarUser
