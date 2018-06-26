@@ -7,6 +7,7 @@ def buscarUser(username, f = False):
             return u
         else:
             user = {
+                'id': u.id,
                 'username': u.username,
                 'password' : u.password,
                 'nome': u.nome,
