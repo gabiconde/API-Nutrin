@@ -30,9 +30,3 @@ def pesquisarPaciente(username, f=False):
                 return True, paciente_dic
         return False, "usuario não é um paciente"
     return False, "Usuario não encontrado"
-
-def pesquisarPacienteById(id_paciente):
-    from Nutrin.Paciente.Model.Paciente import Paciente
-    paciente = Paciente.query.get(id_paciente)
-    return {'p':paciente.user.username, 'nome':paciente.user.nome}
-

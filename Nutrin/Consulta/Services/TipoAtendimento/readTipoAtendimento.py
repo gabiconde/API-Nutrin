@@ -28,8 +28,3 @@ def readTipoAtendimento(f = False, id_tipo = None):
             'qtdRetorno': t.qtdRetorno
         })
     return True, tipo_atendimento_dic
-
-    
-def readAtendimentoById(id_atendimento):
-    from Nutrin.Consulta.Model.TipoAtendimento import TipoAtendimento
-    return TipoAtendimento.query.get(id_atendimento)
