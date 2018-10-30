@@ -13,10 +13,12 @@ def listarPacientes(f=False):
             'email': p.user.email,
             'celular': p.user.celular,
             'tipo': p.user.tipo,
+            'ativo':p.user.ativo,
             'dataNascimento': p.dataNascimento,
             'sexo': p.sexo,
             'cidade': p.cidade,
             'profissao': p.profissao,
+            'altura': p.altura,
             'objetivo': p.objetivo
         })
     return pacientes_dic

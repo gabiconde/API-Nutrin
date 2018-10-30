@@ -17,8 +17,6 @@ def LoginRoute():
     response["Dados"] = l
     response["Mensagem"] = "O usuario ou a senha estão errados"
     return jsonify(response)
-    
-
 
 @app.route("/usuarios", methods=["GET"])
 def ListarUserRoute():
@@ -31,7 +29,7 @@ def ListarUserRoute():
 @app.route("/usuarios/cadastrar", methods=["POST"])
 def CadastarUserRoute():
     from Nutrin.User.Services.cadastrarUser import cadastrarUser
-    dados = request.get_json()
+    dados = request.get_json(force=True)
     username = dados["username"]
     password = dados["password"]
     nome = dados["nome"]
@@ -102,13 +100,26 @@ def AlterarUserRoute():
     response["Mensagem"] = mensagem
     return jsonify(response)
 
-@app.route("/usuario/excluir/<username>", methods=["GET"])
+@app.route("/usuario/desativar/<username>", methods=["GET"])
 def DeletarUserRoute(username):
     from Nutrin.User.Services.excluirUser import excluirUser
     if excluirUser(username):
         response["Status"] = "Sucesso"
         response["Dados"] = ""
-        response["Mensagem"] = "Usuário excluido"
+        response["Mensagem"] = "Usuário desativado"
+        return jsonify(response)
+    response["Status"] = "Erro"
+    response["Dados"] = ""
+    response["Mensagem"] = "Usuário não existe"
+    return jsonify(response)
+
+@app.route("/usuario/ativar/<username>", methods=["GET"])
+def AtivarUserRoute(username):
+    from Nutrin.User.Services.excluirUser import ativarUser
+    if ativarUser(username):
+        response["Status"] = "Sucesso"
+        response["Dados"] = ""
+        response["Mensagem"] = "Usuário ativado"
         return jsonify(response)
     response["Status"] = "Erro"
     response["Dados"] = ""

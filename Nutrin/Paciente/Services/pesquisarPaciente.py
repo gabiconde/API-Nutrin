@@ -10,6 +10,8 @@ def pesquisarPaciente(username, f=False):
             if f :
                 return True, p
             else:
+                from Nutrin.Controle.converter_data import dateToString
+                dataNascimento = dateToString(p.dataNascimento)
                 paciente_dic = {
                 'username': p.user.username,
                 'password' : p.user.password,
@@ -17,12 +19,20 @@ def pesquisarPaciente(username, f=False):
                 'email': p.user.email,
                 'celular': p.user.celular,
                 'tipo': p.user.tipo,
-                'dataNascimento': p.dataNascimento,
+                'dataNascimento': dataNascimento,
                 'sexo': p.sexo,
                 'cidade': p.cidade,
                 'profissao': p.profissao,
-                'objetivo': p.objetivo
+                'objetivo': p.objetivo,
+                'ativo':p.user.ativo,
+                'altura': p.altura
                 }
                 return True, paciente_dic
         return False, "usuario não é um paciente"
     return False, "Usuario não encontrado"
+
+def pesquisarPacienteById(id_paciente):
+    from Nutrin.Paciente.Model.Paciente import Paciente
+    paciente = Paciente.query.get(id_paciente)
+    return {'p':paciente.user.username, 'nome':paciente.user.nome}
+

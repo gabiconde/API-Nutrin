@@ -28,3 +28,10 @@ def Error403(error):
     response["Status"] = "Error"
     response["Dados"] = error
     return jsonify(response)
+
+@app.errorhandler(405)
+def Error404(error):
+    response["Mensagem"] = "errrrouu"
+    response["Status"] = "Error"
+    response["Dados"] = error
+    return jsonify(response)

@@ -12,6 +12,7 @@ def listarUser(f=False):
             'nome': u.nome,
             'email': u.email,
             'celular': u.celular,
-            'tipo': u.tipo
+            'tipo': u.tipo,
+            'ativo': u.ativo,
         })
     return user_dic

@@ -10,6 +10,7 @@ class User(db.Model):
     email = db.Column(db.String, unique=True)
     celular = db.Column(db.String(11))
     tipo = db.Column(db.String(1))
+    ativo = db.Column(db.Boolean, default=True)
 
     #tipo: N - nutricionista, P - paciente, A - admin  
 
