@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from Nutrin.User.Services.listarUser import listarUser
 def login(username, password):
     users = listarUser()

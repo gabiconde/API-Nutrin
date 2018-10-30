@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from Nutrin import db
 from Nutrin.Consulta.Model.Horarios import Horarios
 

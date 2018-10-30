@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from Nutrin.Consulta.Model.TipoEstado import TipoEstado
 
 def readTipoEstado(f=False):

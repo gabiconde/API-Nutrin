@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from Nutrin.Paciente.Model.Paciente import Paciente
 
 def listarPacientes(f=False):

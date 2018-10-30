@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 def readConsulta(f=False):
     from Nutrin.Consulta.Model.Consulta import Consulta
     consultas = Consulta.query.all()

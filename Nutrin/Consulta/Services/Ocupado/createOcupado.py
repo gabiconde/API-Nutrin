@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from Nutrin import db
 from Nutrin.Consulta.Services.Ocupado.readOcupado import readOcupadoNoPeriodo
 from Nutrin.Consulta.Model.Ocupado import Ocupado

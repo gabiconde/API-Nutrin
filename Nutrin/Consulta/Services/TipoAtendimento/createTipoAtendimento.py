@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 def createTipoAtendimento(nome, preco, qtdRetorno):
     nome = nome.upper()
     from Nutrin.Consulta.Model.TipoAtendimento import TipoAtendimento

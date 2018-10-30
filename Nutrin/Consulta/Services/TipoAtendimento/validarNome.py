@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 def validarNome(nome):
     from Nutrin.Consulta.Services.TipoAtendimento.readTipoAtendimento import readTipoAtendimento
     status, tipos_atendimentos = readTipoAtendimento(True)

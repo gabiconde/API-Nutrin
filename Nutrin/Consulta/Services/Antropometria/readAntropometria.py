@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from Nutrin.Consulta.Model.Antropometria import Antropometria
 from Nutrin import db
 

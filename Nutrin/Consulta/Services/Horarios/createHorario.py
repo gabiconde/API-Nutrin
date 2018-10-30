@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from Nutrin.Consulta.Model.Horarios import Horarios
 from Nutrin.Consulta.Services.Horarios.readHorario import readHorario
 from Nutrin.Consulta.Services.Horarios.listHorario import listHorarioData, listHorario

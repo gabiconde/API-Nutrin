@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 def buscarTipoAtendimento(f, tipo_atendimentos, id_tipo):
     for t in tipo_atendimentos:
         if t.id == id_tipo:

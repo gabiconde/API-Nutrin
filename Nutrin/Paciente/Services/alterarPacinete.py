@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 def alterarPaciente(username_atual, username, nome, email, celular, tipo, dataNascimento, sexo, cidade, profissao, objetivo, altura):
     from Nutrin import db
     from Nutrin.Paciente.Services.pesquisarPaciente import pesquisarPaciente

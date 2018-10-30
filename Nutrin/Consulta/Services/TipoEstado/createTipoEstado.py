@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from Nutrin.Consulta.Model.TipoEstado import TipoEstado
 from Nutrin.Consulta.Services.TipoEstado.validarNome import validarNome
 from Nutrin import db

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from Nutrin.Paciente.Model.Paciente import Paciente
 from Nutrin.User.Services.cadastrarUser import cadastrarUser
 from Nutrin.User.Services.buscarUser import buscarUser

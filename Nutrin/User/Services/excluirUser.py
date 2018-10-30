@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from Nutrin.User.Services.buscarUser import buscarUser
 
 def excluirUser(username):

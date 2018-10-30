@@ -1,4 +1,4 @@
-
+# -*- coding: utf-8 -*-
 def updateConsulta(id_consulta, paciente_id, tipoAtendimento_id, tipoEstado_id, pagamento ):
     from Nutrin.Consulta.Services.Consulta.readConsulta import readConsultaId
     status, c = readConsultaId(id_consulta,True)

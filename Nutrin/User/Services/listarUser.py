@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from Nutrin.User.Model.User import User
 
 def listarUser(f=False):

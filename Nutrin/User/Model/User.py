@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from Nutrin import db
 
 class User(db.Model):

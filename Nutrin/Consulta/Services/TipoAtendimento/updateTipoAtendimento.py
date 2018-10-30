@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 def updateTipoAtendimento(id_atendiemnto, nome, preco, qtdRetorno):
     from Nutrin.Consulta.Services.TipoAtendimento.readTipoAtendimento import readTipoAtendimento
     status, tipo_atendimento = readTipoAtendimento(True, id_atendiemnto)

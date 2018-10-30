@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from Nutrin import db
 from Nutrin.User.Model.User import User
 

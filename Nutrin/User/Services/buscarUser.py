@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 def buscarUser(username, f = False):
     from Nutrin.User.Model.User import User
     from Nutrin import db

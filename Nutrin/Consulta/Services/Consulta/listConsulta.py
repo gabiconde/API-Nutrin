@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from Nutrin.Consulta.Services.Consulta.readConsulta import readConsulta
 from Nutrin.Consulta.Model.Consulta import Consulta
 #listar todas as consultas == read
