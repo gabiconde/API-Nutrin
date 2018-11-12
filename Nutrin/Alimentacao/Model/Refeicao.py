@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from Nutrin import db
 from Nutrin.Alimentacao.Model.TipoRefeicao import TipoRefeicao
 from Nutrin.Alimentacao.Model.Anamnese import Anamnese

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from Nutrin import db
 from Nutrin.Paciente.Model.Paciente import Paciente
 

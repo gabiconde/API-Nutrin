@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 import datetime
 from dateutil.parser import parse
 
@@ -25,3 +24,19 @@ def stringToDatetime(time_str):
     datetime_format = "%Y-%m-%d - %H:%M"
     return datetime.datetime.strptime(time_str, datetime_format)
     #return parse(time_str)
+
+def stringToTime(time_str):
+    datetime_format = "%H:%M"
+    return datetime.time(int(time_str[:2]),int(time_str[3:]))
+    #return parse(time_str)
+
+def stringToBinary(url_str):
+    #print(' '.join(format(ord(x), 'b') for x in a))
+    return url_str.encode('utf-8')
+    
+
+def binaryToString(url_bin):
+    if url_bin:
+        return url_bin.decode('utf-8')
+    return None
+    

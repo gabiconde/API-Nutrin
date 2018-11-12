@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from Nutrin import db
 from Nutrin.Consulta.Model.Ocupado import Ocupado
 
@@ -47,5 +46,19 @@ def readAllOcupado(f=False):
             })
         return True, ocupados_dic
     return False, 'Nenhuma hora ocupada cadastrada'
+
+def readOcupadoById(id_ocupado):
+    from Nutrin.Consulta.Services.Horarios.readHorario import readHorarioById
+    ocup = Ocupado.query.get(id_ocupado)
+    if ocup != None:
+        print(type(ocup))
+        print(ocup.id)
+        print(ocup.horario_id)
+        a = ocup.horario_id
+        status, pqp = readHorarioById(a, True)
+        return [ocup.horaI, pqp.data]
+    return print('id ocupado ---------------- {}'.format(id_ocupado))
+
+
 
 

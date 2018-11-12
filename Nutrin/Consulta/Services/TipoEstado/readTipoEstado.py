@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from Nutrin.Consulta.Model.TipoEstado import TipoEstado
 
 def readTipoEstado(f=False):
@@ -13,3 +12,7 @@ def readTipoEstado(f=False):
             'nome': t.nome
         })
     return tipos_estado_dic
+
+def readEstadoById(id_estado):
+    return TipoEstado.query.get(id_estado)
+     

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from Nutrin.User.Model.User import User
 
 def listarUser(f=False):
@@ -8,6 +7,7 @@ def listarUser(f=False):
     user_dic = []
     for u in users:
         user_dic.append({
+            'id':u.id,
             'username': u.username,
             'password' : u.password,
             'nome': u.nome,

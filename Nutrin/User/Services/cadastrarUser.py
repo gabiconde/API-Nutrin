@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from Nutrin.User.Model.User import User
 from Nutrin.User.Services.validar import validar_email, validar_username
 from Nutrin import db

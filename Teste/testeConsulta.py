@@ -99,14 +99,14 @@ def testeAdcPagamento(id_consulta, column, id_column):
 
 def main():
     # print(testeConsultaCreate("2", "1", "17:00","18:00", "2018-11-01", "1"))
-    # print(testeListConsultas())
+     print(testeListConsultas())
     # print(testeListConsultasPacientes('2'))
     # print(testeListConsultaHorarios('2018-11-01'))
     # print(testeAlterarConsulta('3','2','1','1',True))
     # print(testeAlterarHorarioConsulta('3','3','2018-11-01','13:00','14:00'))
     # print(testeDesmarcarConsulta('2','tipoEstado_id','3'))
     # print(testeAdcAntropometria('2','antropometria_id','1'))
-    # print(testeAdcDieta('2','dieta',))
+    # print(testeAdcDieta('1','dieta','../Users/gabic/Documents'))
     # print(testeAdcPagamento('2','pagamento', True))
 main()
 

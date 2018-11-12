@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from Nutrin.Consulta.Services.Ocupado.createOcupado import createOcupado
 from Nutrin.Consulta.Services.Ocupado.readOcupado import readOcupadoNoPeriodo
 from Nutrin.Consulta.Services.Horarios.listHorario import listHorarioData

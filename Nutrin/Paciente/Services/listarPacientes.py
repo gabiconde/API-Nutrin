@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from Nutrin.Paciente.Model.Paciente import Paciente
 
 def listarPacientes(f=False):
@@ -8,6 +7,7 @@ def listarPacientes(f=False):
     pacientes_dic = []
     for p in pacientes:
         pacientes_dic.append({
+            'id':p.id,
             'username': p.user.username,
             'password' : p.user.password,
             'nome': p.user.nome,

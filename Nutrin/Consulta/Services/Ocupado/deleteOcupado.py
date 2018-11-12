@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from Nutrin.Consulta.Services.Consulta.listConsulta import listOcupadoConsulta
 '''
 def deleteOcupado(id_ocupado):

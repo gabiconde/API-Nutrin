@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+
 def updateConsulta(id_consulta, paciente_id, tipoAtendimento_id, tipoEstado_id, pagamento ):
     from Nutrin.Consulta.Services.Consulta.readConsulta import readConsultaId
     status, c = readConsultaId(id_consulta,True)
@@ -56,19 +56,19 @@ def updateAntropometriaConsulta(id_consulta, paciente_id, tipoAtendimento_id, ho
         return True, "Consulta alterada con sucesso"
     return False, "Consulta não encontrada"
 
-def updateDietaConsulta(id_consulta, paciente_id, tipoAtendimento_id, horario_id, tipoEstado_id, pagamento ):
-    from Nutrin.Consulta.Services.Consulta.readConsulta import readConsultaId
-    status, c = readConsultaId(id_consulta,True)
-    if status:
-        c.paciente_id = paciente_id
-        c.tipoAtendimento_id = tipoAtendimento_id
-        c.horario_id = horario_id
-        c.tipoEstado_id = tipoEstado_id
-        c.pagamento = pagamento
-        from Nutrin import db
-        db.session.commit()
-        return True, "Consulta alterada con sucesso"
-    return False, "Consulta não encontrada"
+# def updateDietaConsulta(id_consulta, paciente_id, tipoAtendimento_id, horario_id, tipoEstado_id, pagamento ):
+#     from Nutrin.Consulta.Services.Consulta.readConsulta import readConsultaId
+#     status, c = readConsultaId(id_consulta,True)
+#     if status:
+#         c.paciente_id = paciente_id
+#         c.tipoAtendimento_id = tipoAtendimento_id
+#         c.horario_id = horario_id
+#         c.tipoEstado_id = tipoEstado_id
+#         c.pagamento = pagamento
+#         from Nutrin import db
+#         db.session.commit()
+#         return True, "Consulta alterada con sucesso"
+#     return False, "Consulta não encontrada"
 
 def updateUmConsulta(id_consulta, column, id_column):
     from Nutrin.Consulta.Services.Consulta.readConsulta import readConsultaId
@@ -79,7 +79,9 @@ def updateUmConsulta(id_consulta, column, id_column):
         elif column == 'antropometria_id':
             c.antropometria_id = id_column
         elif column == 'dieta':
-            c.dieta = id_column
+            from Nutrin.Controle.converter_data import stringToBinary
+            value = stringToBinary(id_column)
+            c.dieta = value
         elif column == 'pagamento':
             c.pagamento = id_column
         else:

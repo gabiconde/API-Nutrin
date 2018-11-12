@@ -12,12 +12,12 @@ def TesteCreateTipoAtendimento(nome, preco, qtdRetorno):
     Dados = Req.api.post(url, json=tipoAtendimento).json()
     return Dados
 
-def TestebuscarTipoAtendimento(id_atual = None):
-    url = url_padrao + "/tipo-atendimento/buscar"
+def TestebuscarTipoAtendimento():
+    url = url_padrao + "/tipo-atendimento"
     dados = {
         "id_atual": id_atual
     }
-    Dados = Req.api.post(url, json=dados).json()
+    Dados = Req.api.get(url).json()
     return Dados
 
 def TesteupdateTipoAtendimento(id_atendiemnto, nome, preco, qtdRetorno):
@@ -35,7 +35,6 @@ def TesteupdateTipoAtendimento(id_atendiemnto, nome, preco, qtdRetorno):
 def main():
     print(TesteCreateTipoAtendimento('Sala alugada', 250, 2))
     #print(TestebuscarTipoAtendimento())
-    #print(TestebuscarTipoAtendimento(1))
     #print(TesteupdateTipoAtendimento(2, 'Residencial', 150, 1))
 main() 
 

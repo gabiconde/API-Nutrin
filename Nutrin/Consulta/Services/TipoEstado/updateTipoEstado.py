@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from Nutrin import db
 
 def updateTipoEstado(id_tipo_estado, novo_nome):

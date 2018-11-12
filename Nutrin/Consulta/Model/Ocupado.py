@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from Nutrin import db
 from Nutrin.Consulta.Model.Horarios import Horarios
 
@@ -15,8 +14,8 @@ class Ocupado(db.Model):
         self.horaI = horaI
         self.horaF = horaF
 
-    def __repr__(self):
-        return "<Horário ocupado: \nid: {}\nHora Inicio: {}\nHora Fim: {}>".format(self.horario_id,self.horaI,self.horaF)
+    # def __repr__(self):
+    #     return "<Horário ocupado: \nid: {}\nHora Inicio: {}\nHora Fim: {}>".format(self.horario_id,self.horaI,self.horaF)
 
 
 

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from flask import  jsonify, render_template
 from Nutrin import app, response
 

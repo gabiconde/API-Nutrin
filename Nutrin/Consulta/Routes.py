@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from flask import jsonify, request
 from Nutrin import app, response
 
@@ -68,20 +67,13 @@ def CreateTipoAtendimentoRoute():
     return jsonify(response)
   
   
-@app.route('/tipo-atendimento/buscar', methods=["POST"])
+@app.route('/tipo-atendimento', methods=["GET"])
 def BuscarTipoAtendimentoRoute():
     from Nutrin.Consulta.Services.TipoAtendimento.readTipoAtendimento import readTipoAtendimento
-    dados = request.get_json()
-    id_atendiemnto = dados["id_atual"]
-    status, mensagem = readTipoAtendimento(False, id_atendiemnto)
-    if status:
-        response["Status"] = "Sucesso"
-        response["Dados"] = mensagem
-        response["Mensagem"] = ""
-        return jsonify(response)
+    status, dados = readTipoAtendimento()
     response["Status"] = "Erro"
-    response["Dados"] = ""
-    response["Mensagem"] = mensagem
+    response["Dados"] = dados
+    response["Mensagem"] = ""
     return jsonify(response)
         
 @app.route('/tipo-atendimento/alterar', methods=["POST"])
@@ -324,7 +316,7 @@ def updateOcupadoRoute():
     
 @app.route('/ocupados', methods=['GET'])
 def listOcupadoRoute():
-    from Nutrin.Consulta.Services.Ocupado.readAllOcupado import readAllOcupado
+    from Nutrin.Consulta.Services.Ocupado.readOcupado import readAllOcupado
     status, mensagem = readAllOcupado()
     if status:
         response["Status"] = "Sucesso"

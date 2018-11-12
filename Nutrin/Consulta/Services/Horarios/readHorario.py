@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from Nutrin.Consulta.Model.Horarios import Horarios
 from Nutrin import db
 from Nutrin.Controle.converter_data import *

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 def deleteConsulta(id_consulta):
     from Nutrin.Consulta.Services.Consulta.readConsulta import readConsultaId
     status, consulta = readConsultaId(id_consulta, True)

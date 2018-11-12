@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 def validar_username(username):
     from Nutrin.User.Services.listarUser import listarUser
     users = listarUser()

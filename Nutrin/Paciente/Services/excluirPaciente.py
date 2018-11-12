@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 def desativarPaciente(username):
     from Nutrin.Paciente.Services.pesquisarPaciente import pesquisarPaciente
     paciente = pesquisarPaciente(username, True)

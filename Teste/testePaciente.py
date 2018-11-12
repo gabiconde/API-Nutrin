@@ -67,11 +67,7 @@ def testeAlterarPaciente(username_atual, username, nome, email, celular, tipo, d
         "cidade": cidade,
         "profissao": profissao,
         "objetivo": objetivo,
-<<<<<<< HEAD
-        'altura':altura
-=======
         "altura": altura
->>>>>>> c48ee3f23b9cb8b3615a95eade7f12d7623bf50b
         
     }
     dados = Req.api.put(url, json=paciente).json()
